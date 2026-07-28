@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALS Project - Premium Convection</title>
+    <!-- Menggunakan font Google 'Montserrat' untuk kesan elegan dan modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variabel Warna */
+        :root {
+            --bg-dark: #121212;
+            --bg-light-dark: #1e1e1e;
+            --text-light: #f4f4f4;
+            --text-muted: #aaaaaa;
+            --accent-rose: #C58373; /* Mengambil nuansa tembaga/rose gold dari logo */
+            --accent-silver: #c0c0c0;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--accent-rose);
+        }
+
+        /* Header & Navigasi */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-container img {
+            height: 50px; /* Sesuaikan ukuran logo */
+        }
+        .logo-container h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent-silver);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+        .hero img {
+            max-width: 300px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5));
+        }
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        .hero h2 strong {
+            color: var(--accent-rose);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+        .btn {
+            padding: 15px 30px;
+            background-color: transparent;
+            color: var(--accent-rose);
+            border: 2px solid var(--accent-rose);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: var(--accent-rose);
+            color: var(--bg-dark);
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 100px 10%;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            color: var(--accent-silver);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-rose);
+            margin: 15px auto 0;
+        }
+        
+        /* Tentang Kami */
+        .about {
+            background-color: var(--bg-light-dark);
+            text-align: center;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Layanan */
+        .services {
+            background-color: var(--bg-dark);
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: var(--bg-light-dark);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 4px solid var(--accent-rose);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Kontak & Footer */
+        footer {
+            background-color: #050505;
+            padding: 50px 10% 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-info h3 {
+            color: var(--accent-silver);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Responsif untuk Mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Disembunyikan untuk tampilan mobile sederhana */
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <!-- Menggunakan gambar logo yang Anda unggah -->
+            <img src="1000047658.png" alt="ALS Project Logo">
+            <h1>ALS PROJECT</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <!-- Logo besar di tengah hero section -->
+        <img src="1000047658.png" alt="ALS Project">
+        <h2>Eksklusivitas dalam <strong>Setiap Jahitan</strong></h2>
+        <p>ALS Project hadir sebagai solusi garmen dan konveksi premium Anda. Mewujudkan desain menjadi pakaian berkualitas tinggi dengan standar ketelitian maksimal.</p>
+        <a href="#kontak" class="btn">Hubungi Kami</a>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="about">
+        <h2 class="section-title">Tentang Kami</h2>
+        <p><strong>ALS Project</strong> adalah perusahaan manufaktur pakaian (konveksi) modern yang mendedikasikan diri pada kualitas, estetika, dan ketepatan waktu. Didukung oleh penjahit profesional dan teknologi tekstil terkini, kami memastikan setiap produk yang keluar dari lini produksi kami tidak hanya nyaman dipakai, tetapi juga memancarkan keanggunan dan durabilitas tinggi.</p>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="services">
+        <h2 class="section-title">Layanan Kami</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Seragam Korporat</h3>
+                <p>Pembuatan seragam kantor, instansi, dan pabrik dengan bahan premium yang nyaman digunakan seharian dan merepresentasikan profesionalisme perusahaan Anda.</p>
+            </div>
+            <div class="service-card">
+                <h3>Apparel & Distro</h3>
+                <p>Memproduksi kaos, hoodie, dan kemeja dengan standar distro untuk brand pakaian Anda. Sablon dan bordir presisi tinggi.</p>
+            </div>
+            <div class="service-card">
+                <h3>Outerwear & Jaket</h3>
+                <p>Custom jaket bomber, parka, hingga windbreaker dengan detail material, ritsleting, dan jahitan kokoh kelas atas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Kontak Section -->
+    <footer id="kontak">
+        <h2 class="section-title">Hubungi Kami</h2>
+        <div class="contact-info">
+            <h3>Mari Diskusikan Proyek Anda Bersama Kami</h3>
+            <p>Email: hello@alsproject.com</p>
+            <p>Telepon / WhatsApp: +62 812-3456-7890</p>
+            <p>Alamat: Jl. Elegan No. 8, Jakarta, Indonesia</p>
+        </div>
+        <div class="copyright">
+            &copy; 2026 ALS Project. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
