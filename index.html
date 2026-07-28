@@ -58,7 +58,7 @@
             gap: 15px;
         }
         .logo-container img {
-            height: 50px; /* Sesuaikan ukuran logo */
+            height: 50px;
         }
         .logo-container h1 {
             font-size: 1.5rem;
@@ -200,18 +200,36 @@
         }
         .contact-info {
             margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .contact-info h3 {
             color: var(--accent-silver);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             font-weight: 400;
         }
         .contact-info p {
             color: var(--text-muted);
-            margin-bottom: 5px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .contact-info p strong {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        /* Style untuk link di bagian kontak */
+        .contact-link {
+            color: var(--accent-rose);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-link:hover {
+            color: var(--accent-silver);
+            text-decoration: underline;
         }
         .copyright {
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.8rem;
             color: #666;
         }
@@ -219,10 +237,13 @@
         /* Responsif untuk Mobile */
         @media (max-width: 768px) {
             nav ul {
-                display: none; /* Disembunyikan untuk tampilan mobile sederhana */
+                display: none; 
             }
             .hero h2 {
                 font-size: 2rem;
+            }
+            .contact-info p {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -232,7 +253,6 @@
     <!-- Header -->
     <header>
         <div class="logo-container">
-            <!-- Menggunakan gambar logo yang Anda unggah -->
             <img src="1000047658.png" alt="ALS Project Logo">
             <h1>ALS PROJECT</h1>
         </div>
@@ -248,7 +268,6 @@
 
     <!-- Hero Section -->
     <section id="beranda" class="hero">
-        <!-- Logo besar di tengah hero section -->
         <img src="1000047658.png" alt="ALS Project">
         <h2>Eksklusivitas dalam <strong>Setiap Jahitan</strong></h2>
         <p>ALS Project hadir sebagai solusi garmen dan konveksi premium Anda. Mewujudkan desain menjadi pakaian berkualitas tinggi dengan standar ketelitian maksimal.</p>
@@ -285,9 +304,25 @@
         <h2 class="section-title">Hubungi Kami</h2>
         <div class="contact-info">
             <h3>Mari Diskusikan Proyek Anda Bersama Kami</h3>
-            <p>Email: hello@alsproject.com</p>
-            <p>Telepon / WhatsApp: +62 812-3456-7890</p>
-            <p>Alamat: Jl. Elegan No. 8, Jakarta, Indonesia</p>
+            
+            <p><strong>Email:</strong> <br> 
+               <a href="mailto:alinhardian16@gmail.com" class="contact-link">alinhardian16@gmail.com</a>
+            </p>
+            
+            <p><strong>Telepon / WhatsApp:</strong> <br> 
+               <a href="https://wa.me/6285973820228" target="_blank" class="contact-link">0859-7382-0228</a>
+            </p>
+            
+            <p><strong>Alamat Workshop:</strong> <br> 
+               Perumahan Cijujung Permai Blok Z3, Merpati Residence No. A5, Sukaraja, Kab. Bogor 16710
+            </p>
+            
+            <p><strong>Peta Lokasi (Google Maps):</strong> <br> 
+               <a href="https://www.google.com/maps/search/?api=1&query=FRCV%2B82H,+Cijujung,+Kec.+Sukaraja,+Kabupaten+Bogor,+Jawa+Barat+16710,+Indonesia" target="_blank" class="contact-link">
+               FRCV+82H, Cijujung, Kec. Sukaraja, Kabupaten Bogor, Jawa Barat
+               </a>
+            </p>
+
         </div>
         <div class="copyright">
             &copy; 2026 ALS Project. All Rights Reserved.
