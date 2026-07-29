@@ -69,7 +69,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
         nav ul li a {
             font-size: 0.9rem;
@@ -162,9 +162,63 @@
             color: var(--text-muted);
         }
 
+        /* Visi & Misi */
+        .visi-misi {
+            background-color: var(--bg-dark);
+        }
+        .vm-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .vm-box {
+            background-color: var(--bg-light-dark);
+            padding: 40px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-rose);
+        }
+        .vm-box h3 {
+            color: var(--accent-silver);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .vm-box p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .vm-list {
+            list-style: none;
+            padding: 0;
+        }
+        .vm-list li {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .vm-list li::before {
+            content: '✓';
+            color: var(--accent-rose);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .vm-list strong {
+            color: var(--text-light);
+        }
+
         /* Layanan */
         .services {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-light-dark);
         }
         .service-grid {
             display: grid;
@@ -172,7 +226,7 @@
             gap: 30px;
         }
         .service-card {
-            background-color: var(--bg-light-dark);
+            background-color: var(--bg-dark);
             padding: 40px 20px;
             text-align: center;
             border-top: 4px solid var(--accent-rose);
@@ -191,20 +245,44 @@
             font-size: 0.95rem;
         }
 
+        /* Portofolio / Proyek */
+        .portfolio {
+            background-color: var(--bg-dark);
+            text-align: center;
+        }
+        .portfolio-desc {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .portfolio-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .portfolio-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
         /* Klien Kami */
         .clients {
             background-color: var(--bg-light-dark);
             text-align: center;
         }
         .client-container {
-            max-width: 900px; /* Membatasi lebar gambar agar tidak terlalu besar di monitor PC */
+            max-width: 900px; 
             margin: 0 auto;
         }
         .client-container img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Memberikan efek bayangan elegan pada gambar */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
         /* Kontak & Footer */
@@ -234,7 +312,6 @@
             color: var(--text-light);
             font-weight: 600;
         }
-        /* Style untuk link di bagian kontak */
         .contact-link {
             color: var(--accent-rose);
             text-decoration: none;
@@ -264,6 +341,9 @@
             section {
                 padding: 80px 5%;
             }
+            .vm-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -280,6 +360,7 @@
                 <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#tentang">Tentang</a></li>
                 <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
                 <li><a href="#klien">Klien</a></li>
                 <li><a href="#kontak">Kontak</a></li>
             </ul>
@@ -298,6 +379,27 @@
     <section id="tentang" class="about">
         <h2 class="section-title">Tentang Kami</h2>
         <p><strong>ALS Project</strong> adalah perusahaan manufaktur pakaian (konveksi) modern yang mendedikasikan diri pada kualitas, estetika, dan ketepatan waktu. Didukung oleh penjahit profesional dan teknologi tekstil terkini, kami memastikan setiap produk yang keluar dari lini produksi kami tidak hanya nyaman dipakai, tetapi juga memancarkan keanggunan dan durabilitas tinggi.</p>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section id="visi-misi" class="visi-misi">
+        <h2 class="section-title">Visi & Misi</h2>
+        <div class="vm-container">
+            <div class="vm-box">
+                <h3>Visi</h3>
+                <p>Menjadi perusahaan jasa konveksi dan penyedia souvenir terdepan yang terpercaya, berkualitas tinggi, dan inovatif.</p>
+            </div>
+            <div class="vm-box">
+                <h3>Misi</h3>
+                <ul class="vm-list">
+                    <li><strong>Kualitas Produk:</strong> Mengutamakan mutu dan standar tinggi pada setiap produk pakaian (seragam, kaos, jaket, fashion wanita, baju olahraga dan lainnya) maupun souvenir agar tahan lama dan berkesan.</li>
+                    <li><strong>Pelayanan Prima:</strong> Memberikan pelayanan yang cepat, ramah, dan profesional serta memberikan solusi terbaik sesuai kebutuhan dan anggaran pelanggan.</li>
+                    <li><strong>Ketepatan Waktu:</strong> Menjaga komitmen ketepatan waktu dalam proses produksi hingga pengiriman barang ke tangan konsumen.</li>
+                    <li><strong>Inovasi Berkelanjutan:</strong> Terus mengikuti tren desain, teknik sablon/bordir, dan variasi souvenir terbaru yang kreatif serta kompetitif.</li>
+                    <li><strong>Kemitraan Jangka Panjang:</strong> Membangun hubungan yang erat dan saling menguntungkan dengan para pelanggan, komunitas, dan mitra bisnis.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Layanan Section -->
@@ -319,11 +421,20 @@
         </div>
     </section>
 
+    <!-- Portofolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">Proyek & Portofolio</h2>
+        <p class="portfolio-desc">Berikut adalah berbagai hasil karya dan produk yang telah kami produksi untuk pelanggan setia kami, mulai dari pakaian, jaket, hingga beragam souvenir korporat.</p>
+        <div class="portfolio-container">
+            <!-- Menampilkan gambar dokumentasi portofolio Anda -->
+            <img src="1000058319.jpg" alt="Portofolio Proyek ALS Project">
+        </div>
+    </section>
+
     <!-- Klien Kami Section -->
     <section id="klien" class="clients">
         <h2 class="section-title">Klien Kami</h2>
         <div class="client-container">
-            <!-- Menampilkan gambar dokumentasi customer Anda -->
             <img src="1000057390.jpg" alt="Daftar Klien ALS Project">
         </div>
     </section>
